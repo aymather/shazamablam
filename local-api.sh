@@ -1,0 +1,1 @@
+cd api && gunicorn -c gunicorn-dev-local.conf.py --reload app:app
