@@ -34,9 +34,9 @@ class ClientBase():
             else:
                 return pd.DataFrame(results, columns=cur.keys())
 
-    def big_insert(self, df, table_name):
+    def big_insert(self, df, schema, table):
     
-        tmp_df = f'tmp_{table_name}_df.csv'
+        tmp_df = f'tmp_{table}_df.csv'
         
         # Create connection
         conn = self.engine.raw_connection()
@@ -50,7 +50,8 @@ class ClientBase():
         f = open(tmp_df, 'r')
         
         # Insert csv into database
-        cur.copy_from(f, table_name, columns=tuple(list(df.columns)), sep=';', null='')
+        cur.execute('set search_path to ' + schema)
+        cur.copy_from(f, table, columns=tuple(list(df.columns)), sep=';', null='')
         conn.commit()
 
         # Remove temp file

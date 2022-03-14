@@ -12,7 +12,7 @@ cities = pd.read_csv('./etc/cities.csv')
 
 xdf = pd.DataFrame([[1234, 'doja'], [4321, 'justin']], columns=['artist_id', 'name'])
 
-client.big_insert(xdf, 'shazamablam.artists')
+client.big_insert(xdf, 'shazamablam', 'artists')
 print('Finished!')
 
 # """
