@@ -10,7 +10,7 @@ client = ClientBase(db_string)
 
 cities = pd.read_csv('./etc/cities.csv')
 
-df = client.execute('select * from shazamablam.artists')
+df = client.execute("insert into shazamablam.artists (artist_id, name) values (12345, 'doja cat')")
 print(df)
 
 # """
