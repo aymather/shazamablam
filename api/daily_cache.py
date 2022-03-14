@@ -16,6 +16,8 @@ string = """
 params = { 'artist': 'doja cat' }
 df = client.execute(string, params)
 
+print(df)
+
 f = open('test_file.txt', 'w')
 f.write(str(df.to_dict('records')))
 f.close()
