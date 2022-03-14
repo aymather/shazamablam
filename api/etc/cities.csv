@@ -1,0 +1,203 @@
+city_id,city_name,state_id
+5785243,Aberdeen SD,US-SD
+5225857,Aberdeen WA,US-WA
+4669635,Abilene,US-TX
+5145476,Akron,US-OH
+5106834,Albany,US-NY
+5454711,Albuquerque,US-NM
+5178127,Allentown,US-PA
+5323810,Anaheim,US-CA
+5879400,Anchorage,US-AK
+4453066,Asheville,US-NC
+4180439,Atlanta,US-GA
+5063342,Aurora,US-IL
+4671654,Austin,US-TX
+5325738,Bakersfield,US-CA
+4347778,Baltimore,US-MD
+4929771,Barnstable,US-MA
+4315588,Baton Rouge,US-LA
+5786899,Bellingham,US-WA
+4884453,Belvidere,US-NJ
+5713587,Bend,US-OR
+5640350,Billings,US-MT
+4049979,Birmingham,US-AL
+5688025,Bismarck,US-ND
+5586437,Boise,US-ID
+4930956,Boston,US-MA
+5110077,Brentwood NY,US-NY
+5282804,Bridgeport,US-CT
+4931429,Brockton,US-MA
+4849448,Brooklyn,US-NY
+4676740,Brownsville,US-TX
+5110629,Buffalo,US-NY
+4149962,Cape Coral,US-FL
+5820705,Casper,US-WY
+4850751,Cedar Rapids,US-IA
+4421208,Centreville,US-VA
+4574324,Charleston,US-SC
+4460243,Charlotte,US-NC
+5821086,Cheyenne,US-WY
+4887398,Chicago,US-IL
+5336269,Chico,US-CA
+4508722,Cincinnati,US-OH
+4613868,Clarksville TN,US-TN
+5150529,Cleveland,US-OH
+5417598,Colorado Springs,US-CO
+4575352,Columbia,US-SC
+4509177,Columbus,US-OH
+5339111,Concord CA,US-CA
+5113694,Coram NY,US-NY
+5221637,Coventry RI,US-RI
+4889229,Crystal Lake,US-IL
+4755158,Dale City VA,US-VA
+4684888,Dallas,US-TX
+4853423,Davenport,US-IA
+4509884,Dayton,US-OH
+5419384,Denver,US-CO
+4990729,Detroit,US-MI
+5445298,Dodge City,US-KS
+4191916,Douglas GA,US-GA
+5024719,Duluth,US-MN
+5520552,Dumas,US-TX
+5520993,El Paso,US-TX
+4890864,Elgin,US-IL
+5188843,Erie,US-PA
+5725846,Eugene,US-OR
+5824805,Evanston,US-IL
+5861897,Fairbanks,US-AK
+5347335,Fairfield,US-OH
+5059163,Fargo,US-ND
+4110486,Fayetteville AR,US-AR
+4155966,Fort Lauderdale,US-FL
+4691930,Fort Worth,US-TX
+4156268,Freeport FL,US-FL
+5350734,Fremont CA,US-CA
+5350937,Fresno,US-CA
+5069297,Grand Island,US-NY
+5423573,Grand Junction,US-CO
+4994358,Grand Rapids,US-MI
+5655240,Great Falls,US-VA
+5254962,Green Bay,US-WI
+4469146,Greensboro,US-NC
+4580543,Greenville,US-MI
+4921100,Hammond IN,US-IN
+4558475,Hanover PA,US-PA
+4835797,Hartford,US-CT
+5855927,Hilo,US-HI
+5856195,Honolulu,US-HI
+4699066,Houston,US-TX
+5596475,Idaho Falls,US-ID
+4259418,Indianapolis,US-IN
+4431410,Jackson,US-MI
+4160021,Jacksonville,US-FL
+4898015,Joliet,US-IL
+5554072,Juneau,US-AK
+4393217,Kansas City,US-MO
+5088262,Keene NH,US-NH
+5799610,Kennewick,US-WA
+4703223,Killeen,US-TX
+4634946,Knoxville,US-TN
+4998830,Lansing,US-KS
+4705349,Laredo,US-TX
+5506956,Las Vegas,US-NV
+4969398,Lewiston,US-ID
+4119403,Little Rock,US-AR
+5368361,Los Angeles,US-CA
+4299276,Louisville,US-KY
+5525577,Lubbock,US-TX
+4207400,Macon,US-MO
+5261457,Madison,US-WI
+4274994,Manhattan,US-KS
+4838204,Mansfield City,US-TX
+5000947,Marquette,US-MI
+4709796,McAllen,US-TX
+4641239,Memphis,US-TN
+5304391,Mesa,US-AZ
+4164138,Miami,US-FL
+4143658,Milford DE,US-DE
+5263045,Milwaukee,US-WI
+5037649,Minneapolis,US-MN
+5666639,Missoula,US-MT
+4076598,Mobile,US-AL
+5373900,Modesto,US-CA
+4644585,Nashville,US-TN
+4839366,New Haven,US-CT
+4335045,New Orleans,US-LA
+5039173,New Ulm MN,US-MN
+5128581,New York City,US-NY
+4776222,Norfolk,US-VA
+5697939,North Platte,US-NE
+4839843,Norwich,US-CT
+5378538,Oakland,US-CA
+5779206,Ogden,US-UT
+4544349,Oklahoma City,US-OK
+5074472,Omaha,US-NE
+4081671,Oneonta,US-AL
+4167147,Orlando,US-FL
+5380184,Oxnard,US-CA
+4560349,Philadelphia,US-PA
+5308655,Phoenix,US-AZ
+4126226,Pine Bluff,US-AR
+5206379,Pittsburgh,US-PA
+4947459,Pittsfield,US-MA
+5604045,Pocatello,US-ID
+5807212,Port Angeles,US-WA
+4169171,Port Saint Lucie,US-FL
+5746545,Portland,US-OR
+5224151,Providence,US-RI
+5780026,Provo,US-UT
+5435464,Pueblo,US-CO
+4487042,Raleigh,US-NC
+5768233,Rapid City,US-SD
+5207728,Reading,US-PA
+5511077,Reno,US-NV
+4781708,Richmond,US-VA
+5387877,Riverside,US-CA
+5134086,Rochester,US-NY
+4907959,Rockford,US-IL
+4219762,Rome,US-GA
+5389489,Sacramento,US-CA
+5044407,Saint Cloud,US-FL
+5077237,Saint Paul,US-MN
+5391295,Salinas,US-CA
+5780993,Salt Lake City,US-UT
+4726206,San Antonio,US-TX
+5391811,San Diego,US-CA
+5391959,San Francisco,US-CA
+5392171,San Jose,US-CA
+5392952,Santa Barbara,US-CA
+4172131,Sarasota,US-FL
+5211303,Scranton,US-PA
+5809844,Seattle,US-WA
+4341513,Shreveport,US-LA
+5231851,Sioux Falls,US-SD
+4786522,South Boston,US-VA
+5811696,Spokane,US-WA
+4250542,Springfield IL,US-IL
+4409896,Springfield MA,US-MA
+4951788,Springfield MO,US-MO
+4407066,St. Louis,US-MO
+5399020,Stockton,US-AL
+5140405,Syracuse,US-NY
+5812944,Tacoma,US-WA
+4174715,Tallahassee,US-FL
+4174757,Tampa,US-FL
+4736476,The Woodlands TX,US-TX
+5402405,Thousand Oaks,US-CA
+4504476,Toms River,US-NJ
+5403191,Tracy CA,US-CA
+5105496,Trenton,US-NJ
+5318313,Tucson,US-AZ
+4553433,Tulsa,US-OK
+5610810,Twin Falls,US-ID
+4738214,Tyler,US-TX
+4791259,Virginia Beach,US-VA
+5175865,Warren OH,US-OH
+4140963,"Washington, D.C.",US-MD
+4281730,Wichita,US-KS
+4145381,Wilmington,US-NC
+5233037,Woonsocket,US-RI
+4956184,Worcester,US-MA
+5816605,Yakima,US-WA
+5177568,Youngstown,US-OH
+5322053,Yuma,US-AZ
