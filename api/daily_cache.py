@@ -10,8 +10,10 @@ client = ClientBase(db_string)
 
 cities = pd.read_csv('./etc/cities.csv')
 
-df = client.execute("insert into shazamablam.artists (artist_id, name) values (12345, 'doja cat')")
-print(df)
+xdf = pd.DataFrame([[1234, 'doja'], [4321, 'justin']], columns=['artist_id', 'name'])
+
+client.big_insert(xdf, 'shazamablam.artists')
+print('Finished!')
 
 # """
 # Collect the data about all the different cities
