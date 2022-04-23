@@ -82,7 +82,7 @@ all_artists = all_artists.astype({ 'artist_id': 'int' })
 
 # Remove the artists that already exist from the list of all artists from this dataset
 insertable_artists = pd.merge(all_artists, existing_artists, on='artist_id', how='outer', indicator=True).query(' _merge == "left_only" ').drop(columns=['_merge']).reset_index(drop=True)
-big_insert(client, insertable_artists, 'shazamablam.artists', commit=False)
+big_insert(client, insertable_artists, 'shazamablam', 'artists', commit=False)
 print(f'Inserted {len(insertable_artists)} new artists')
 
 """
@@ -120,7 +120,7 @@ songs = songs.astype({ 'song_id': 'int' })
 
 # Remove the songs that already exist from the list of all songs from this dataset
 insertable_songs = pd.merge(songs, existing_songs, on='song_id', how='outer', indicator=True).query(' _merge == "left_only" ').drop(columns=['_merge']).reset_index(drop=True)
-big_insert(client, insertable_songs, 'shazamablam.songs', commit=False)
+big_insert(client, insertable_songs, 'shazamablam', 'songs', commit=False)
 print(f'Inserted {len(insertable_songs)} new songs')
 
 """
@@ -136,7 +136,7 @@ artist_songs_refs = artist_songs_refs.astype({ 'song_id': 'int' }) # fix types
 insertable_map = artist_songs_refs[artist_songs_refs['song_id'].isin(insertable_song_ids)].reset_index(drop=True)
 
 # Insert
-big_insert(client, insertable_map, 'shazamablam.artist_songs_refs', commit=False)
+big_insert(client, insertable_map, 'shazamablam', 'artist_songs_refs', commit=False)
 print(f'Inserted {len(insertable_map)} new map items')
 
 """
@@ -149,7 +149,7 @@ records_cols = ['song_id', 'rank', 'city_id']
 records = tracks[records_cols].reset_index(drop=True)
 
 # Insert
-big_insert(client, records, 'shazamablam.records', commit=False)
+big_insert(client, records, 'shazamablam', 'records', commit=False)
 print(f'Inserted {len(records)} new records')
 
 # Commit all our changes in the transaction
