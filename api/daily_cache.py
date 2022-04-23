@@ -1,12 +1,12 @@
-from etc.ClientBase import ClientBase
+from utils.DatabaseBaseClass import DatabaseBaseClass
+from utils.functions import big_insert
 import requests
 import pandas as pd
 import numpy as np
 import time
 
-db_string = 'postgresql+psycopg2://postgres:Wheninrome1;@database-1.couue7ynblpf.us-west-1.rds.amazonaws.com:5432/postgres'
-
-client = ClientBase(db_string)
+client = DatabaseBaseClass('psql')
+client.connect()
 
 cities = pd.read_csv('./etc/cities.csv')
 
@@ -70,14 +70,19 @@ that they can act as references.
 string = """
     select artist_id
     from shazamablam.artists
-    where artist_id in :artist_ids
+    where artist_id in %(artist_ids)s
 """
 params = { 'artist_ids': tuple(all_artists['artist_id'].values)}
-existing_artists = client.execute(string, params)
+client.cur.execute(string, params)
+existing_artists = client.df()
+
+# Secure types
+existing_artists = existing_artists.astype({ 'artist_id': 'int' })
+all_artists = all_artists.astype({ 'artist_id': 'int' })
 
 # Remove the artists that already exist from the list of all artists from this dataset
 insertable_artists = pd.merge(all_artists, existing_artists, on='artist_id', how='outer', indicator=True).query(' _merge == "left_only" ').drop(columns=['_merge']).reset_index(drop=True)
-client.big_insert(insertable_artists, 'shazamablam', 'artists')
+big_insert(client, insertable_artists, 'shazamablam.artists', commit=False)
 print(f'Inserted {len(insertable_artists)} new artists')
 
 """
@@ -103,14 +108,19 @@ songs = tracks.drop_duplicates(subset=['song_id']).reset_index(drop=True)[song_c
 string = """
     select song_id
     from shazamablam.songs
-    where song_id in :song_ids
+    where song_id in %(song_ids)s
 """
 params = { 'song_ids': tuple(songs['song_id'].values) }
-existing_songs = client.execute(string, params)
+client.cur.execute(string, params)
+existing_songs = client.df()
+
+# Secure types
+existing_songs = existing_songs.astype({ 'song_id': 'int' })
+songs = songs.astype({ 'song_id': 'int' })
 
 # Remove the songs that already exist from the list of all songs from this dataset
 insertable_songs = pd.merge(songs, existing_songs, on='song_id', how='outer', indicator=True).query(' _merge == "left_only" ').drop(columns=['_merge']).reset_index(drop=True)
-client.big_insert(insertable_songs, 'shazamablam', 'songs')
+big_insert(client, insertable_songs, 'shazamablam.songs', commit=False)
 print(f'Inserted {len(insertable_songs)} new songs')
 
 """
@@ -122,10 +132,11 @@ artist->song mappings in on the new songs that we've added.
 insertable_song_ids = insertable_songs['song_id'].values
 
 # Map items that we need to create because we just created the songs for them
+artist_songs_refs = artist_songs_refs.astype({ 'song_id': 'int' }) # fix types
 insertable_map = artist_songs_refs[artist_songs_refs['song_id'].isin(insertable_song_ids)].reset_index(drop=True)
 
 # Insert
-client.big_insert(insertable_map, 'shazamablam', 'artist_songs_refs')
+big_insert(client, insertable_map, 'shazamablam.artist_songs_refs', commit=False)
 print(f'Inserted {len(insertable_map)} new map items')
 
 """
@@ -138,5 +149,8 @@ records_cols = ['song_id', 'rank', 'city_id']
 records = tracks[records_cols].reset_index(drop=True)
 
 # Insert
-client.big_insert(records, 'shazamablam', 'records')
+big_insert(client, records, 'shazamablam.records', commit=False)
 print(f'Inserted {len(records)} new records')
+
+# Commit all our changes in the transaction
+client.conn.commit()
