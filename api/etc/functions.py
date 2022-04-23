@@ -15,7 +15,7 @@ def big_insert(client, df, schema, table, commit=True):
     
     # Copy tmp csv into database
     client.cur.execute('set search_path to ' + schema)
-    client.cur.copy_from(f, table_name, columns=tuple(list(df.columns)), sep=';', null='')
+    client.cur.copy_from(f, table, columns=tuple(list(df.columns)), sep=';', null='')
     
     if commit:
         client.conn.commit()
