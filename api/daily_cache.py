@@ -1,5 +1,5 @@
-from utils.DatabaseBaseClass import DatabaseBaseClass
-from utils.functions import big_insert
+from etc.DatabaseBaseClass import DatabaseBaseClass
+from etc.functions import big_insert
 import requests
 import pandas as pd
 import numpy as np
