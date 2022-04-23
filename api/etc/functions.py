@@ -3,8 +3,8 @@ import os
 
 def big_insert(client, df, schema, table, commit=True):
     
-    tmp_df = f'tmp_{table_name}_df.csv'
     table_name = schema + '.' + table
+    tmp_df = f'tmp_{table_name}_df.csv'
     
     # Clean the dataframe of the separator we're using and escape characters
     df = df.replace({ ';': '', r'\\': '' }, regex=True)
